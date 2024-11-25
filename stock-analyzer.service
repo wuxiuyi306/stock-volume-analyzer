@@ -1,0 +1,13 @@
+[Unit]
+Description=Stock Analyzer Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/var/www/stock-analyzer
+Environment=PYTHONPATH=/var/www/stock-analyzer
+ExecStart=/usr/bin/python3 app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
